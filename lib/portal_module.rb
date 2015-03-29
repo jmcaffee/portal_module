@@ -132,15 +132,12 @@ module PortalModule
       @current_env = nil
 
       @credentials = {}
-      #@credentials = { dev: [ ENV['HSBC_DEV_USER'], ENV['HSBC_DEV_PASSWORD'] ],
-      #                dev2: [ ENV['HSBC_DEV2_USER'], ENV['HSBC_DEV2_PASSWORD'] ],
-      #                 sit: [ ENV['HSBC_SIT_USER'], ENV['HSBC_SIT_PASSWORD'] ],
-      #                 uat: [ ENV['HSBC_UAT_USER'], ENV['HSBC_UAT_PASSWORD'] ] }
+      #@credentials = { dev: [ ENV['DEV_USER'], ENV['DEV_PASSWORD'] ],
+      #               }
 
-      @base_urls   = { dev: "http://207.38.119.211/fap2Dev/Portal",
-                      dev2: "http://207.38.119.211/fap2Dev2/Portal",
-                       sit: "http://207.38.119.211/fap2SIT/Portal",
-                       uat: "http://207.38.119.211/fap2UAT/Portal" }
+      @base_urls   = {}
+      #@base_urls   = { dev: "http://example.com/Portal",
+      #               }
 
       @page_urls   = { 'DataTransformationPage' => "/Admin/DataTransformation.aspx",
                        'PrequalSetupPage'       => "/Admin/PrequalSetup.aspx",
