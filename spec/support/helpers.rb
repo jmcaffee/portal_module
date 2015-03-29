@@ -2,9 +2,7 @@
 # File::    helpers.rb
 # Purpose:: Spec helper methods
 #
-# Author::    Jeff McAffee 07/05/2014
-# Copyright:: Copyright (c) 2014, kTech Systems LLC. All rights reserved.
-# Website::   http://ktechsystems.com
+# Author::    Jeff McAffee 2015-03-29
 ##############################################################################
 
 def run_with_args(args, client = nil, exitcode = false)
@@ -42,42 +40,5 @@ def capture_output
   fake_stdout.read
 ensure
   $stdout = actual_stdout
-end
-
-##
-# Command Line Interface object
-#
-def cli
-  return $real_cli unless $real_cli.nil?
-  PortalModule.configure do |config|
-    config.credentials = { :dev => ['admin', '***REMOVED***'] }
-  end
-  $real_cli = PortalModule::CLI.new
-end
-
-def quit_cli
-  cli.quit
-  $real_cli = nil
-end
-
-
-##
-# Create a stage given a stage data hash object
-#
-def create_stage_for_test stage_data
-  cli.create_stage(stage_data)
-rescue
-end
-
-##
-# Delete a stage given a stage data hash object
-#
-def delete_stage_for_test stage_data
-  cli.delete_stage stage_data
-rescue
-end
-
-def admin_module *args
-  `bin/admin_module #{args}`
 end
 

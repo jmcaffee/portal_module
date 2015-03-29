@@ -18,6 +18,15 @@ describe PortalModule::Client do
   let(:login_page) { client.page_factory.login_page }
 
   context "#env=" do
+
+    before(:each) do
+      PortalModule.configure do |config|
+        config.reset
+        config.credentials[:sit] = ['user', 'pass']
+        config.base_urls[:sit] = 'http://example.com/Portal'
+      end
+    end
+
     it "sets environment to use" do
       expect{ client.env = 'sit' }.to_not raise_exception
       expect( client.env ).to eq :sit
@@ -69,6 +78,7 @@ describe PortalModule::Client do
         PortalModule.configure do |config|
           config.reset
           config.credentials[:dev] = ['devuser', 'devpass']
+          config.base_urls[:dev] = 'http://example.com/Portal'
         end
       end
 

@@ -132,15 +132,12 @@ module PortalModule
       @current_env = nil
 
       @credentials = {}
-      #@credentials = { dev: [ ENV['***REMOVED***'], ENV['***REMOVED***'] ],
-      #                dev2: [ ENV['***REMOVED***'], ENV['***REMOVED***'] ],
-      #                 sit: [ ENV['***REMOVED***'], ENV['***REMOVED***'] ],
-      #                 uat: [ ENV['***REMOVED***'], ENV['***REMOVED***'] ] }
+      #@credentials = { dev: [ ENV['DEV_USER'], ENV['DEV_PASSWORD'] ],
+      #               }
 
-      @base_urls   = { dev: "***REMOVED***",
-                      dev2: "***REMOVED***",
-                       sit: "***REMOVED***",
-                       uat: "***REMOVED***" }
+      @base_urls   = {}
+      #@base_urls   = { dev: "http://example.com/Portal",
+      #               }
 
       @page_urls   = { 'DataTransformationPage' => "/Admin/DataTransformation.aspx",
                        'PrequalSetupPage'       => "/Admin/PrequalSetup.aspx",
