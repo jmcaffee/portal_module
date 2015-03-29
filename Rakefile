@@ -8,7 +8,7 @@ task :console do
   ARGV.clear
 
   PortalModule.configure do |config|
-    config.credentials = { :dev => ['admin', 'Password1*'] }
+    config.credentials = { :dev => [ ENV['DEV_USER'], ENV['DEV_PASSWORD'] ] }
   end
 
   def console_help
