@@ -62,7 +62,7 @@ module PortalModule::Pages
 
     def load_org org_string
       org_name = org_string.split('~')[1]
-      return if viewing_span == org_name
+      return self if viewing_span == org_name
 
       self.search_text = org_string
       self.search_button
