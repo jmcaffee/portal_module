@@ -28,7 +28,8 @@ module PortalModule
 
     def set_org org
       assert_org_is_configured org
-      loan_entry_page.load_org(org)
+
+      loan_entry_page.load_org(org_string(org))
     end
 
     ##
@@ -40,7 +41,7 @@ module PortalModule
       assert_dir_exists file_path
 
       loan_entry_page
-        .load_org(org)
+        .load_org(org_string(org))
         .download
 
       file_path = Pathname(file_path)
@@ -68,7 +69,7 @@ module PortalModule
       assert_file_exists file_path
 
       loan_entry_page
-        .load_org(org)
+        .load_org(org_string(org))
         .upload(Pathname(file_path).expand_path)
     end
 
@@ -80,6 +81,11 @@ module PortalModule
 
     def download_dir
       Pathname(PortalModule.configuration.download_dir)
+    end
+
+    def org_string org
+      orgid = PortalModule.configuration.orgs[org]
+      orgstr = "#{orgid}~#{org}"
     end
   end # class
 end # module

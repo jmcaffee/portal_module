@@ -31,7 +31,7 @@ module PortalModule
 
     def set_org org
       assert_org_is_configured org
-      dts_page.load_org(org)
+      dts_page.load_org(org_string(org))
     end
 
     def download org, file_path
@@ -40,7 +40,7 @@ module PortalModule
       assert_dir_exists file_path
 
       dts_page
-        .load_org(org)
+        .load_org(org_string(org))
         .download
 
       file_path = Pathname(file_path)
@@ -66,10 +66,9 @@ module PortalModule
       assert_org_is_configured org
       assert_file_exists file_path
 
-      # FIXME: Needs to be an expanded path
       dts_page
-        .load_org(org)
-        .upload(file_path)
+        .load_org(org_string(org))
+        .upload(Pathname(file_path).expand_path)
     end
 
   private
@@ -80,6 +79,11 @@ module PortalModule
 
     def download_dir
       Pathname(PortalModule.configuration.download_dir)
+    end
+
+    def org_string org
+      orgid = PortalModule.configuration.orgs[org]
+      orgstr = "#{orgid}~#{org}"
     end
   end # class Dts
 end # module
