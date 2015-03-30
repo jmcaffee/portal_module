@@ -47,6 +47,7 @@ module PortalModule
       file_path = file_path + DL_FILENAME if file_path.directory?
 
       dl_file = download_dir + DL_FILENAME
+      wait_for_file(dl_file, PortalModule.configuration.download_timeout)
       assert_file_exists dl_file
 
       FileUtils.mv dl_file, file_path
@@ -84,6 +85,15 @@ module PortalModule
     def org_string org
       orgid = PortalModule.configuration.orgs[org]
       orgstr = "#{orgid}~#{org}"
+    end
+
+    def wait_for_file(file_path, timeout_secs)
+      stop_time = Time.now + timeout_secs
+      file_path = Pathname(file_path)
+      while !file_path.exist?
+        break if stop_time <= Time.now
+        sleep 1
+      end
     end
   end # class Dts
 end # module
