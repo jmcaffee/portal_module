@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require "portal_module/version"
 require 'portal_module/config_helper'
 require "portal_module/cli"

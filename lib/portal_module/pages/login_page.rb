@@ -18,10 +18,10 @@ class LoginPage
     PortalModule.configuration.base_url
   end
 
-  text_field(:username, :id => "ctl00_cntPlh_txtUserName" )
-  text_field(:password_mask, :id => "ctl00_cntPlh_txtPasswordMask" )
-  text_field(:password, :id => "ctl00_cntPlh_txtPassword" )
-  button(:login, :id => "ctl00_cntPlh_btnLogin" )
+  text_field(:username, :id => "ctl00_ContentPlaceHolder1_Login1_txtUserName" )
+  text_field(:password_mask, :id => "ctl00_ContentPlaceHolder1_Login1_txtPasswordMask" )
+  text_field(:password, :id => "ctl00_ContentPlaceHolder1_Login1_txtPassword" )
+  button(:login, :id => "ctl00_ContentPlaceHolder1_Login1_btnLogin" )
 
   def login_as(username, password)
     if !self.username? && current_url == PortalModule.configuration.base_url + '/User/AppLogin.aspx'

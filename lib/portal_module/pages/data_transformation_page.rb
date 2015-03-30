@@ -10,7 +10,9 @@ module PortalModule::Pages
   class DataTransformationPage
     include PageObject
 
-    #page_url(:get_dynamic_url)
+    # If page_url is not set, page_object will not navigate to this page
+    # when visit is true.
+    page_url(:get_dynamic_url)
 
     def get_dynamic_url
       PortalModule.configuration.url(DataTransformationPage)
