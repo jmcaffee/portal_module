@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
+<<<<<<< HEAD
 require 'rubygems'
 require 'bundler/setup'
 
+=======
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 # Exit cleanly from an early interrupt
 Signal.trap("INT") { exit 1 }
 

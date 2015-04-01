@@ -40,7 +40,11 @@ module PortalModule
     end
 
     ##
+<<<<<<< HEAD
     # Login to the admin module.
+=======
+    # Login to the portal
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     #
     # If no credentials are provided, try to get credentials from the config object.
     #
@@ -58,7 +62,11 @@ module PortalModule
     end
 
     ##
+<<<<<<< HEAD
     # Logout of the admin module
+=======
+    # Logout of the portal
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     #
 
     def logout
@@ -67,7 +75,11 @@ module PortalModule
     end
 
     ##
+<<<<<<< HEAD
     # Logout of the admin module and quit the browser
+=======
+    # Logout of the portal and quit the browser
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     #
 
     def quit

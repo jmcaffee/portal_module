@@ -1,10 +1,16 @@
 ##############################################################################
 # File::    page_factory.rb
 # Purpose:: Provides Page objects
+<<<<<<< HEAD
 # 
 # Author::    Jeff McAffee 06/30/2014
 # Copyright:: Copyright (c) 2014, kTech Systems LLC. All rights reserved.
 # Website::   http://ktechsystems.com
+=======
+#
+# Author::    Jeff McAffee 2015-03-29
+#
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 ##############################################################################
 
 require 'portal_module/pages'

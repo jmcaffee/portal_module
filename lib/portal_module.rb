@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+require 'rubygems'
+require 'bundler/setup'
+
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 require "portal_module/version"
 require 'portal_module/config_helper'
 require "portal_module/cli"
@@ -121,6 +127,10 @@ module PortalModule
 
     attr_accessor :orgs
     attr_reader   :download_dir
+<<<<<<< HEAD
+=======
+    attr_accessor :download_timeout
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 
 
     def initialize
@@ -148,6 +158,10 @@ module PortalModule
       @orgs = {}
 
       @download_dir = ''
+<<<<<<< HEAD
+=======
+      @download_timeout = 360
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     end
 
     ##

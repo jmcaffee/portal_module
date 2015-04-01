@@ -1,8 +1,13 @@
 ##############################################################################
 # File::    loan_entry.rb
 # Purpose:: LoanEntry command line interface
+<<<<<<< HEAD
 # 
 # Author::    Jeff McAffee date
+=======
+#
+# Author::    Jeff McAffee 2015-03-29
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 ##############################################################################
 
 module PortalModule

@@ -28,7 +28,12 @@ module PortalModule
 
     def set_org org
       assert_org_is_configured org
+<<<<<<< HEAD
       loan_entry_page.load_org(org)
+=======
+
+      loan_entry_page.load_org(org_string(org))
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     end
 
     ##
@@ -40,13 +45,21 @@ module PortalModule
       assert_dir_exists file_path
 
       loan_entry_page
+<<<<<<< HEAD
         .load_org(org)
+=======
+        .load_org(org_string(org))
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
         .download
 
       file_path = Pathname(file_path)
       file_path = file_path + DL_FILENAME if file_path.directory?
 
       dl_file = download_dir + DL_FILENAME
+<<<<<<< HEAD
+=======
+      wait_for_file(dl_file, PortalModule.configuration.download_timeout)
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
       assert_file_exists dl_file
 
       FileUtils.mv dl_file, file_path
@@ -68,7 +81,11 @@ module PortalModule
       assert_file_exists file_path
 
       loan_entry_page
+<<<<<<< HEAD
         .load_org(org)
+=======
+        .load_org(org_string(org))
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
         .upload(Pathname(file_path).expand_path)
     end
 
@@ -81,5 +98,22 @@ module PortalModule
     def download_dir
       Pathname(PortalModule.configuration.download_dir)
     end
+<<<<<<< HEAD
+=======
+
+    def org_string org
+      orgid = PortalModule.configuration.orgs[org]
+      orgstr = "#{orgid}~#{org}"
+    end
+
+    def wait_for_file(file_path, timeout_secs)
+      stop_time = Time.now + timeout_secs
+      file_path = Pathname(file_path)
+      while !file_path.exist?
+        break if stop_time <= Time.now
+        sleep 1
+      end
+    end
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
   end # class
 end # module

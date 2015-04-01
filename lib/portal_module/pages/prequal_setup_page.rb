@@ -11,12 +11,24 @@ module PortalModule::Pages
   class PrequalSetupPage
     include PageObject
 
+<<<<<<< HEAD
     #page_url(:get_dynamic_url)
+=======
+    # If page_url is not set, page_object will not navigate to this page
+    # when visit is true.
+    page_url(:get_dynamic_url)
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 
     def get_dynamic_url
       PortalModule.configuration.url(PrequalSetupPage)
     end
 
+<<<<<<< HEAD
+=======
+    span(:viewing_span,
+          id: 'ctl00_ContentPlaceHolder1_lblOrganizationName')
+
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
     button(:activate_button,
           id: 'ctl00_ContentPlaceHolder1_btnVersion')
 
@@ -49,8 +61,21 @@ module PortalModule::Pages
     end
 
     def load_org org_string
+<<<<<<< HEAD
       self.search_text = org_string
       self.search_button
+=======
+      org_name = org_string.split('~')[1]
+      return self if viewing_span == org_name
+
+      self.search_text = org_string
+      self.search_button
+
+      viewing_span_element.wait_until(120, "Org not loaded - #{org_name}") do
+        viewing_span == org_name
+      end
+
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
       self
     end
 
