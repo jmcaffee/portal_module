@@ -1,10 +1,9 @@
 ##############################################################################
 # File::    config_helper.rb
 # Purpose:: Configuration object wrapper
-# 
-# Author::    Jeff McAffee 07/01/2014
-# Copyright:: Copyright (c) 2014, kTech Systems LLC. All rights reserved.
-# Website::   http://ktechsystems.com
+#
+# Author::    Jeff McAffee 2015-03-29
+#
 ##############################################################################
 
 module PortalModule

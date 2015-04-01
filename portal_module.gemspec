@@ -29,4 +29,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "nokogiri"
   spec.add_runtime_dependency "page-object"
   spec.add_runtime_dependency "thor"
+<<<<<<< HEAD
+=======
+  spec.add_runtime_dependency "ktutils"
+>>>>>>> b947a5d3cfb546e2133836adecd77d0487b4ff77
 end
