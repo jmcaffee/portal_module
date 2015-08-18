@@ -231,4 +231,10 @@ interface to the actual DTS (DataTransformationPage) page object.
 - The API object also hides the fact that the app may need to go to a multiple
   pages to accomplish the request.
 
+## LICENSE
+
+PortalModule is licensed under the MIT license.
+
+See [LICENSE](https://github.com/jmcaffee/portal_module/blob/master/LICENSE) for
+details.
 
