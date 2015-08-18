@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jeff@ktechsystems.com"]
   spec.summary       = %q{Portal Module CLI}
   spec.description   = %q{Command line interface for Portal Module}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jmcaffee/portal_module"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
