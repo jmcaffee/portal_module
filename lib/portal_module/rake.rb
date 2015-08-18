@@ -6,7 +6,7 @@
 #
 ##############################################################################
 
-require 'portal_module' 
+require 'portal_module'
 
 module PortalModule::Rake
 end
