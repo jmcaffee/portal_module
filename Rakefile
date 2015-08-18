@@ -1,6 +1,18 @@
 require "bundler/gem_tasks"
 require 'ktutils/os'
 
+require 'rake/clean'
+
+# Setup common clean and clobber targets
+
+CLEAN.include("pkg/**/*.*")
+CLEAN.include("tmp/**/*.*")
+
+CLOBBER.include("pkg")
+CLOBBER.include("tmp")
+
+##############################################################################
+
 desc 'start a console'
 task :console do
   require 'pry'
@@ -66,6 +78,8 @@ CONSOLE_HELP
   console_help
   Pry.start
 end
+
+##############################################################################
 
 desc 'Start chrome with data dir'
 task :start_chrome do
